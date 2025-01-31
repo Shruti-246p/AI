@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gaming Facts</h1>
+        <p id="factDisplay">Click the button to get a fact!</p>
+        <button id="factButton">Get Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "The video game industry is larger than the movie and music industries combined in terms of revenue.",
+            "The first video game is often cited as \"Tennis for Two,\" created in 1958.",
+            "\"Pac-Man,\" released in 1980, is one of the most recognizable video games of all time.",
+            "Competitive gaming, or esports, has become a major global phenomenon, with professional leagues and tournaments.",
+            "The average age of a gamer is around 35 years old.",
+            "Gaming is not just a solitary activity; many popular games focus on cooperative or competitive multiplayer modes.",
+            "Mobile gaming is the largest segment of the video game market.",
+            "There are numerous health benefits associated with gaming, such as improved problem-solving skills, hand-eye coordination, and strategic thinking.",
+             "The most popular gaming platforms include PC, PlayStation, Xbox, and Nintendo consoles.",
+            "Games often have complex narratives and world-building, comparable to books and movies."
+          ];
+
+        const factDisplay = document.getElementById('factDisplay');
+        const factButton = document.getElementById('factButton');
+
+        factButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factDisplay.textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
